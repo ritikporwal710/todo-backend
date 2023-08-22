@@ -9,7 +9,7 @@ import cors from "cors";
 import { config } from "dotenv";
 config({
     path: "./data/config.env",
-  });
+  }); 
 // console.log(process.env.val);    
 export const app = express();  
 
