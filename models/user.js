@@ -20,7 +20,6 @@ const schema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-})
-
+});
 // creating models for the schema of users
-export const User = new mongoose.model("User",schema); 
+export const User = mongoose.model("User",schema); 

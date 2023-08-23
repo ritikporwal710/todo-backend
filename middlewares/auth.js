@@ -3,7 +3,7 @@ import { User } from "../models/user.js";
 
 
 export const isAuthenticated = async (req,res,next)=>{
-    const token = req.cookies.token;
+    const { token } = req.cookies;
 
     if(!token)
     {
@@ -17,4 +17,4 @@ export const isAuthenticated = async (req,res,next)=>{
     req.user = await User.findById(decoded._id);
     next();
 
-}
+};
