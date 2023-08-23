@@ -16,7 +16,11 @@ export const app = express();
 // using middlewares to fetch data from body through postman api 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    origin: [process.env.FRONTEND_URL],  
+    methods: ["GET","POST","PUT","DELETE"],
+    credentials: true,
+}));
 
 // using routes
 app.use("/api/v1/users",userRouter);
